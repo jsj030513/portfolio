@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장성주의 포트폴리오</title>
+
+    <style>
+        /* 기본 스타일 */
+        body {
+            font-family: 'Malgun Gothic', 'Arial', sans-serif;
+            background-color: #eef1f6; /* 배경색: 밝은 회색 */
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 헤더 및 내비게이션 */
+        header {
+            background-color: #1e3a8a; /* 헤더색: 진한 파랑 */
+            color: white;
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #fcd34d; /* 호버색: 노란색 */
+        }
+
+        /* 메인 컨테이너 */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 소개 섹션 */
+        .intro-section {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 30px;
+        }
+        .intro-section h2 {
+            color: #1e3a8a;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .intro-section p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        /* 프로젝트 섹션 */
+        .project-card {
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: #fff;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(30, 58, 138, 0.15);
+        }
+        .project-card h3 {
+            color: #4a90e2;
+            margin-top: 0;
+        }
+        .tech-tags span {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: #1e3a8a;
+            padding: 5px 10px;
+            margin-right: 5px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        /* 버튼 및 동적 영역 */
+        #contactButton {
+            background-color: #f97316; /* 주황색 */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #contactButton:hover {
+            background-color: #ea580c;
+        }
+        #js-output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fffbeb; /* 노란색 배경 */
+            border: 1px solid #fcd34d;
+            border-radius: 5px;
+            text-align: left;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>장성주의 포트폴리오</h1>
+        <nav>
+            <a href="#intro">소개</a>
+            <a href="#projects">프로젝트</a>
+            <a href="#contact">연락처</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <section id="intro" class="intro-section">
+            <h2>프론트엔드 개발자 장성주</h2>
+            <p>
+                사용자 경험(UX)을 최우선으로 생각하며, React와 Next.js를 이용해 **효율적이고 성능 좋은** 웹 애플리케이션을 구축합니다.
+            </p>
+            <p><strong>주요 기술:</strong> React, Next.js, TypeScript, Tailwind CSS</p>
+        </section>
+
+        <section id="projects">
+            <h2 style="color:#1e3a8a; margin-bottom: 25px;">주요 프로젝트 (3개)</h2>
+
+            <div class="project-card" id="project1">
+                <h3>1. 실시간 협업 툴 개발</h3>
+                <p>Firebase와 WebSockets를 활용하여 문서 실시간 공동 편집 기능을 구현했습니다. (개발 기간: 3개월)</p>
+                <div class="tech-tags">
+                    <span>React</span>
+                    <span>Firebase</span>
+                    <span>Redux</span>
+                    <span>Styled Components</span>
+                </div>
+            </div>
+
+            <div class="project-card" id="project2">
+                <h3>2. 대용량 데이터 시각화 대시보드</h3>
+                <p>D3.js와 Vue.js를 이용해 100만 건 이상의 데이터를 처리하는 관리자 대시보드를 구축했습니다. (기여도: 70%)</p>
+                <div class="tech-tags">
+                    <span>Vue.js</span>
+                    <span>D3.js</span>
+                    <span>Node.js</span>
+                    <span>MongoDB</span>
+                </div>
+            </div>
+
+            <div class="project-card" id="project3">
+                <h3>3. 개인 기술 블로그 (정적 사이트)</h3>
+                <p>Next.js의 SSG 기능을 활용하여 마크다운 기반의 블로그를 제작하고 Vercel에 배포했습니다.</p>
+                <div class="tech-tags">
+                    <span>Next.js</span>
+                    <span>Markdown</span>
+                    <span>Vercel</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" style="text-align: center; margin-top: 40px;">
+            <h2 style="color:#1e3a8a; margin-bottom: 20px;">연락처</h2>
+            <p>이메일: <a href="mailto:sungjoo.dev@example.com">sungjoo.dev@example.com</a></p>
+            <button id="contactButton">문의 이메일 형식 보기</button>
+            <div id="js-output">
+                버튼을 클릭하면 문의를 위한 이메일 형식이 표시됩니다.
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // 1. HTML 요소 가져오기
+        const button = document.getElementById('contactButton');
+        const outputDiv = document.getElementById('js-output');
+
+        // 2. 버튼 클릭 이벤트 리스너 추가
+        button.addEventListener('click', function() {
+            // 3. 실행 로직 (버튼 클릭 시 내용 변경)
+            
+            // 현재 시각 가져오기 (클릭 반응 시간 기록)
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('ko-KR');
+
+            // 문의 형식 내용
+            const emailTemplate = `
+                <p style="font-size: 1.1em; color: #333;">
+                    <strong>장성주님께:</strong>
+                    <br><br>
+                    안녕하세요. 귀하의 포트폴리오를 잘 보았습니다.
+                    <br>
+                    저는 [회사/팀 이름]의 [직함] [이름]입니다.
+                    <br>
+                    [협업/채용/문의]와 관련하여 연락드립니다.
+                    <br>
+                    <br>
+                    (상세 내용 작성)
+                </p>
+                <p style="text-align: right; font-size: 0.9em; color: #777;">
+                    (클릭 시각: ${timeString})
+                </p>
+            `;
+
+            // 메시지 영역 업데이트
+            outputDiv.innerHTML = emailTemplate;
+            
+            // 버튼 스타일을 잠시 변경하여 클릭되었다는 것을 시각적으로 피드백
+            button.style.backgroundColor = '#4a90e2'; // 파란색으로 변경
+            setTimeout(() => {
+                button.style.backgroundColor = '#f97316'; // 0.5초 후 원래 주황색으로 복귀
+            }, 500);
+        });
+
+        // 페이지 로드 시 콘솔에 메시지 출력
+        console.log("장성주의 포트폴리오 웹페이지가 성공적으로 로드되었습니다.");
+    </script>
+
+</body>
+</html>
