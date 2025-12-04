@@ -1,236 +1,247 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>장성주의 포트폴리오</title>
+  <meta charset="UTF-8" />
+  <title>포트폴리오 | 장성주</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        /* 기본 스타일 */
-        body {
-            font-family: 'Malgun Gothic', 'Arial', sans-serif;
-            background-color: #eef1f6; /* 배경색: 밝은 회색 */
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Pretendard', sans-serif;
+      background: #0f0f0f;
+      color: #e8e8e8;
+      line-height: 1.7;
+    }
+    a { color: #4dc3ff; text-decoration: none; }
+    h1, h2, h3 { margin: 0; }
 
-        /* 헤더 및 내비게이션 */
-        header {
-            background-color: #1e3a8a; /* 헤더색: 진한 파랑 */
-            color: white;
-            padding: 15px 30px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 1.8em;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #fcd34d; /* 호버색: 노란색 */
-        }
+    header {
+      background: #000;
+      padding: 20px 40px;
+      border-bottom: 1px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header nav a {
+      margin-right: 20px;
+      font-size: 16px;
+    }
 
-        /* 메인 컨테이너 */
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 30px;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        }
+    section {
+      padding: 80px 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .title {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #4dc3ff;
+      font-weight: 700;
+    }
 
-        /* 소개 섹션 */
-        .intro-section {
-            text-align: center;
-            padding: 40px 0;
-            border-bottom: 1px solid #ddd;
-            margin-bottom: 30px;
-        }
-        .intro-section h2 {
-            color: #1e3a8a;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        .intro-section p {
-            font-size: 1.2em;
-            color: #555;
-        }
+    .hero {
+      text-align: center;
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 20px;
+      color: #bbbbbb;
+    }
 
-        /* 프로젝트 섹션 */
-        .project-card {
-            border: 1px solid #e0e0e0;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            background-color: #fff;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(30, 58, 138, 0.15);
-        }
-        .project-card h3 {
-            color: #4a90e2;
-            margin-top: 0;
-        }
-        .tech-tags span {
-            display: inline-block;
-            background-color: #e0f2fe;
-            color: #1e3a8a;
-            padding: 5px 10px;
-            margin-right: 5px;
-            border-radius: 4px;
-            font-size: 0.9em;
-            font-weight: 600;
-        }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .skill-box {
+      flex: 1;
+      min-width: 240px;
+      padding: 20px;
+      border: 1px solid #333;
+      background: #1a1a1a;
+      border-radius: 10px;
+    }
 
-        /* 버튼 및 동적 영역 */
-        #contactButton {
-            background-color: #f97316; /* 주황색 */
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        #contactButton:hover {
-            background-color: #ea580c;
-        }
-        #js-output {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #fffbeb; /* 노란색 배경 */
-            border: 1px solid #fcd34d;
-            border-radius: 5px;
-            text-align: left;
-            font-style: italic;
-        }
-    </style>
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+    .project-card {
+      padding: 20px;
+      border: 1px solid #333;
+      background: #1a1a1a;
+      border-radius: 10px;
+      transition: 0.2s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #4dc3ff;
+    }
+    .project-card h3 {
+      margin-bottom: 10px;
+      font-size: 22px;
+      color: #4dc3ff;
+    }
+
+    footer {
+      padding: 40px;
+      text-align: center;
+      color: #777;
+      border-top: 1px solid #333;
+      margin-top: 60px;
+    }
+  </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>장성주의 포트폴리오</h1>
-        <nav>
-            <a href="#intro">소개</a>
-            <a href="#projects">프로젝트</a>
-            <a href="#contact">연락처</a>
-        </nav>
-    </header>
+<header>
+  <nav>
+    <a href="#about">소개</a>
+    <a href="#skills">보유기술</a>
+    <a href="#projects">프로젝트</a>
+    <a href="#contact">연락처</a>
+  </nav>
+</header>
 
-    <div class="container">
-        
-        <section id="intro" class="intro-section">
-            <h2>프론트엔드 개발자 장성주</h2>
-            <p>
-                사용자 경험(UX)을 최우선으로 생각하며, React와 Next.js를 이용해 **효율적이고 성능 좋은** 웹 애플리케이션을 구축합니다.
-            </p>
-            <p><strong>주요 기술:</strong> React, Next.js, TypeScript, Tailwind CSS</p>
-        </section>
+<section class="hero">
+  <h1>장성주</h1>
+  <p>네트워크 엔지니어 · 보안 분석가 · 웹 서비스 개발자</p>
+</section>
 
-        <section id="projects">
-            <h2 style="color:#1e3a8a; margin-bottom: 25px;">주요 프로젝트 (3개)</h2>
+<section id="about">
+  <h2 class="title">소개</h2>
+  <p>
+    네트워크 인프라 구축, 정보 보안, 그리고 웹 서비스 개발을 함께 수행하며  
+    <strong>보안 중심의 실무형 엔지니어</strong>로 경험을 쌓아왔습니다.<br><br>
 
-            <div class="project-card" id="project1">
-                <h3>1. 실시간 협업 툴 개발</h3>
-                <p>Firebase와 WebSockets를 활용하여 문서 실시간 공동 편집 기능을 구현했습니다. (개발 기간: 3개월)</p>
-                <div class="tech-tags">
-                    <span>React</span>
-                    <span>Firebase</span>
-                    <span>Redux</span>
-                    <span>Styled Components</span>
-                </div>
-            </div>
+    HQ–Branch 구조의 복잡한 네트워크를 직접 설계·구축하고  
+    EIGRP, HSRP/VRRP, VLAN, ACL, NAT/PAT 등 기업 인프라 표준 기술을 활용하여  
+    이중화·보안·확장성을 갖춘 구조를 만들어왔습니다.<br><br>
 
-            <div class="project-card" id="project2">
-                <h3>2. 대용량 데이터 시각화 대시보드</h3>
-                <p>D3.js와 Vue.js를 이용해 100만 건 이상의 데이터를 처리하는 관리자 대시보드를 구축했습니다. (기여도: 70%)</p>
-                <div class="tech-tags">
-                    <span>Vue.js</span>
-                    <span>D3.js</span>
-                    <span>Node.js</span>
-                    <span>MongoDB</span>
-                </div>
-            </div>
+    또한 불펜토크 프로젝트를 통해 SQL Injection, XSS, CSRF 등  
+    실제 취약점을 재현하며 보안 분석 능력을 키웠고,  
+    돌봄 플랫폼 개발에서는 로그인, 회원가입, 포인트 지급/환급,  
+    지도 기반 서비스(경사로/엘리베이터 표시) 등을 직접 구현하며  
+    실전형 웹 개발 경험을 쌓았습니다.
+  </p>
+</section>
 
-            <div class="project-card" id="project3">
-                <h3>3. 개인 기술 블로그 (정적 사이트)</h3>
-                <p>Next.js의 SSG 기능을 활용하여 마크다운 기반의 블로그를 제작하고 Vercel에 배포했습니다.</p>
-                <div class="tech-tags">
-                    <span>Next.js</span>
-                    <span>Markdown</span>
-                    <span>Vercel</span>
-                </div>
-            </div>
-        </section>
+<section id="skills">
+  <h2 class="title">보유 기술</h2>
 
-        <section id="contact" style="text-align: center; margin-top: 40px;">
-            <h2 style="color:#1e3a8a; margin-bottom: 20px;">연락처</h2>
-            <p>이메일: <a href="mailto:sungjoo.dev@example.com">sungjoo.dev@example.com</a></p>
-            <button id="contactButton">문의 이메일 형식 보기</button>
-            <div id="js-output">
-                버튼을 클릭하면 문의를 위한 이메일 형식이 표시됩니다.
-            </div>
-        </section>
+  <div class="skills">
+
+    <div class="skill-box">
+      <h3>네트워크</h3>
+      <p>
+        VLAN 설계 · EIGRP 동적 라우팅 · VRRP/HSRP 이중화<br>
+        ACL 정책 설계 · NAT/PAT · DHCP · 트렁킹<br>
+        DMZ/서버망/백업망 구조 설계 및 분리<br>
+        Cisco Packet Tracer & GNS3 실습
+      </p>
     </div>
 
-    <script>
-        // 1. HTML 요소 가져오기
-        const button = document.getElementById('contactButton');
-        const outputDiv = document.getElementById('js-output');
+    <div class="skill-box">
+      <h3>보안</h3>
+      <p>
+        SQL Injection / XSS / CSRF 분석 및 PoC<br>
+        서버 접근 통제 · UTM 및 방화벽 정책 수립<br>
+        Linux 서버 보안 설정 · SELinux · 계정/권한 관리<br>
+        보안 아키텍처 문서화 및 위험 분석
+      </p>
+    </div>
 
-        // 2. 버튼 클릭 이벤트 리스너 추가
-        button.addEventListener('click', function() {
-            // 3. 실행 로직 (버튼 클릭 시 내용 변경)
-            
-            // 현재 시각 가져오기 (클릭 반응 시간 기록)
-            const now = new Date();
-            const timeString = now.toLocaleTimeString('ko-KR');
+    <div class="skill-box">
+      <h3>백엔드 개발</h3>
+      <p>
+        Java · Oracle 21c · MyBatis · Tomcat 9<br>
+        로그인/회원가입/인증번호 발송 로직 구현<br>
+        포인트 지급·환급 로직 및 CSRF 방지 구조 분석<br>
+        JSP 사용 없이 XML 기반 설정 프로젝트 경험
+      </p>
+    </div>
 
-            // 문의 형식 내용
-            const emailTemplate = `
-                <p style="font-size: 1.1em; color: #333;">
-                    <strong>장성주님께:</strong>
-                    <br><br>
-                    안녕하세요. 귀하의 포트폴리오를 잘 보았습니다.
-                    <br>
-                    저는 [회사/팀 이름]의 [직함] [이름]입니다.
-                    <br>
-                    [협업/채용/문의]와 관련하여 연락드립니다.
-                    <br>
-                    <br>
-                    (상세 내용 작성)
-                </p>
-                <p style="text-align: right; font-size: 0.9em; color: #777;">
-                    (클릭 시각: ${timeString})
-                </p>
-            `;
+    <div class="skill-box">
+      <h3>프론트엔드 · 웹 구축</h3>
+      <p>
+        HTML/CSS/JS 기반 정적/동적 페이지 제작<br>
+        모달 UI, 지도 API 인터랙션 개발<br>
+        웹 공격 재현 페이지(XSS, CSRF) 제작 경험
+      </p>
+    </div>
 
-            // 메시지 영역 업데이트
-            outputDiv.innerHTML = emailTemplate;
-            
-            // 버튼 스타일을 잠시 변경하여 클릭되었다는 것을 시각적으로 피드백
-            button.style.backgroundColor = '#4a90e2'; // 파란색으로 변경
-            setTimeout(() => {
-                button.style.backgroundColor = '#f97316'; // 0.5초 후 원래 주황색으로 복귀
-            }, 500);
-        });
+  </div>
+</section>
 
-        // 페이지 로드 시 콘솔에 메시지 출력
-        console.log("장성주의 포트폴리오 웹페이지가 성공적으로 로드되었습니다.");
-    </script>
+<section id="projects">
+  <h2 class="title">프로젝트</h2>
+
+  <div class="projects">
+
+    <div class="project-card">
+      <h3>불펜토크 보안 취약점 분석 프로젝트</h3>
+      <p>
+        • SQL Injection, XSS, CSRF 등 실제 공격을 직접 재현<br>
+        • 포인트 조작 URL 자동 공격(일반 브라우저만으로 가능) 분석<br>
+        • GET 파라미터 기반 자동 포인트 증가 취약점 발견<br>
+        • 공격 PoC 페이지 제작 & 취약점 개선 방안 문서화
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>HQ–Branch 네트워크 설계 및 구축</h3>
+      <p>
+        • 본사–지사 구조의 대규모 네트워크 설계<br>
+        • VLAN 분리, 서버망/DMZ/백업망 계층화<br>
+        • EIGRP 기반 동적 라우팅 설정<br>
+        • VRRP/HSRP 게이트웨이 이중화 구현<br>
+        • Extended ACL 기반 서비스 접근 통제<br>
+        • 트렁킹, SVI, NAT/PAT, DHCP 등 전체 구성 수행
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>돌봄 플랫폼 웹 서비스 개발</h3>
+      <p>
+        • 회원가입/로그인, 아이디·비밀번호 찾기 구현<br>
+        • 6자리 인증번호 생성 및 알림 로직 구현<br>
+        • 포인트 지급/환급 기능 및 내역 조회 페이지 제작<br>
+        • 프로필 수정 페이지 및 모달 UI 개발<br>
+        • 지도 API 기반 경사로/엘리베이터 안내 기능 설계
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>웹 취약점 PoC 페이지 제작</h3>
+      <p>
+        • XSS 공격 자동 실행 페이지 제작<br>
+        • CSRF 테스트 페이지(form-auto-submit) 구축<br>
+        • 패킷 기반 공격 재현 및 분석 보고서 작성
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="title">연락처</h2>
+  <p>Email: sungju03051323@email.com</p>
+  <p>Github: https://github.com/jsj030513</p>
+  <p>Velog: https://velog.io/@sungju030513/posts</p>
+</section>
+
+<footer>
+  © 2025 장성주 — All Rights Reserved.
+</footer>
 
 </body>
 </html>
