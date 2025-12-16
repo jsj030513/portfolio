@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>포트폴리오 | 장성주</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <style>
     body {
       margin: 0;
@@ -15,7 +14,6 @@
     }
     a { color: #4dc3ff; text-decoration: none; }
     h1, h2, h3 { margin: 0; }
-
     header {
       background: #000;
       padding: 20px 40px;
@@ -28,7 +26,6 @@
       margin-right: 20px;
       font-size: 16px;
     }
-
     section {
       padding: 80px 40px;
       max-width: 1100px;
@@ -40,7 +37,6 @@
       color: #4dc3ff;
       font-weight: 700;
     }
-
     .hero {
       text-align: center;
       padding-top: 120px;
@@ -54,7 +50,6 @@
       font-size: 20px;
       color: #bbbbbb;
     }
-
     .skills {
       display: flex;
       flex-wrap: wrap;
@@ -68,7 +63,16 @@
       background: #1a1a1a;
       border-radius: 10px;
     }
-
+    .pill {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid #333;
+      border-radius: 999px;
+      margin: 6px 6px 0 0;
+      background: #151515;
+      font-size: 13px;
+      color: #cfcfcf;
+    }
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -90,7 +94,20 @@
       font-size: 22px;
       color: #4dc3ff;
     }
-
+    .doc-box {
+      padding: 20px;
+      border: 1px solid #333;
+      background: #121212;
+      border-radius: 10px;
+    }
+    pre {
+      background: #0b0b0b;
+      padding: 16px;
+      border-radius: 10px;
+      border: 1px solid #222;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
     footer {
       padding: 40px;
       text-align: center;
@@ -102,12 +119,12 @@
 </head>
 
 <body>
-
 <header>
   <nav>
     <a href="#about">소개</a>
     <a href="#skills">보유기술</a>
     <a href="#projects">프로젝트</a>
+    <a href="#subnetting">서브넷팅</a>
     <a href="#contact">연락처</a>
   </nav>
 </header>
@@ -120,62 +137,59 @@
 <section id="about">
   <h2 class="title">소개</h2>
   <p>
-    네트워크 인프라 구축, 정보 보안, 그리고 웹 서비스 개발을 함께 수행하며  
-    <strong>보안 중심의 실무형 엔지니어</strong>로 경험을 쌓아왔습니다.<br><br>
-
-    HQ–Branch 구조의 복잡한 네트워크를 직접 설계·구축하고  
-    EIGRP, HSRP/VRRP, VLAN, ACL, NAT/PAT 등 기업 인프라 표준 기술을 활용하여  
-    이중화·보안·확장성을 갖춘 구조를 만들어왔습니다.<br><br>
-
-    또한 불펜토크 프로젝트를 통해 SQL Injection, XSS, CSRF 등  
-    실제 취약점을 재현하며 보안 분석 능력을 키웠고,  
-    돌봄 플랫폼 개발에서는 로그인, 회원가입, 포인트 지급/환급,  
-    지도 기반 서비스(경사로/엘리베이터 표시) 등을 직접 구현하며  
-    실전형 웹 개발 경험을 쌓았습니다.
+    네트워크 인프라 구축, 정보 보안, 웹 서비스 개발을 함께 수행하는
+    <strong>보안 중심의 실무형 엔지니어</strong>입니다.<br><br>
+    HQ–Branch 구조 네트워크를 직접 설계·구축하며
+    EIGRP, HSRP/VRRP, VLAN, ACL, NAT/PAT 기반의
+    이중화·보안·확장성 구조를 구현했습니다.<br><br>
+    또한 SQL Injection, XSS, CSRF 등 실제 취약점을 재현하고
+    웹 서비스 구조 개선까지 수행한 경험을 보유하고 있습니다.
   </p>
 </section>
 
 <section id="skills">
   <h2 class="title">보유 기술</h2>
-
   <div class="skills">
 
     <div class="skill-box">
       <h3>네트워크</h3>
       <p>
-        VLAN 설계 · EIGRP 동적 라우팅 · VRRP/HSRP 이중화<br>
-        ACL 정책 설계 · NAT/PAT · DHCP · 트렁킹<br>
-        DMZ/서버망/백업망 구조 설계 및 분리<br>
-        Cisco Packet Tracer & GNS3 실습
+        VLAN 설계 · EIGRP · VRRP/HSRP<br>
+        ACL 정책 · NAT/PAT · DHCP · Trunk<br>
+        서버망 / DMZ / 백업망 분리
       </p>
+      <div>
+        <span class="pill">Subnetting (VLSM)</span>
+        <span class="pill">CIDR 계산</span>
+        <span class="pill">Gateway 설계</span>
+        <span class="pill">Route Summarization</span>
+      </div>
     </div>
 
     <div class="skill-box">
       <h3>보안</h3>
       <p>
-        SQL Injection / XSS / CSRF 분석 및 PoC<br>
-        서버 접근 통제 · UTM 및 방화벽 정책 수립<br>
-        Linux 서버 보안 설정 · SELinux · 계정/권한 관리<br>
-        보안 아키텍처 문서화 및 위험 분석
+        SQL Injection / XSS / CSRF 분석<br>
+        UTM · 방화벽 정책 수립<br>
+        서버 접근 통제 및 계정 관리
       </p>
     </div>
 
     <div class="skill-box">
-      <h3>백엔드 개발</h3>
+      <h3>백엔드</h3>
       <p>
-        Java · Oracle 21c · MyBatis · Tomcat 9<br>
-        로그인/회원가입/인증번호 발송 로직 구현<br>
-        포인트 지급·환급 로직 및 CSRF 방지 구조 분석<br>
-        JSP 사용 없이 XML 기반 설정 프로젝트 경험
+        Java · Oracle 21c · MyBatis<br>
+        Tomcat 9 · XML 기반 설정<br>
+        포인트 지급·환급 로직
       </p>
     </div>
 
     <div class="skill-box">
-      <h3>프론트엔드 · 웹 구축</h3>
+      <h3>프론트엔드</h3>
       <p>
-        HTML/CSS/JS 기반 정적/동적 페이지 제작<br>
-        모달 UI, 지도 API 인터랙션 개발<br>
-        웹 공격 재현 페이지(XSS, CSRF) 제작 경험
+        HTML / CSS / JavaScript<br>
+        모달 UI · 지도 API 연동<br>
+        공격 재현 페이지 제작
       </p>
     </div>
 
@@ -184,48 +198,34 @@
 
 <section id="projects">
   <h2 class="title">프로젝트</h2>
-
   <div class="projects">
 
     <div class="project-card">
-      <h3>불펜토크 보안 취약점 분석 프로젝트</h3>
+      <h3>불펜토크 보안 취약점 분석</h3>
       <p>
-        • SQL Injection, XSS, CSRF 등 실제 공격을 직접 재현<br>
-        • 포인트 조작 URL 자동 공격(일반 브라우저만으로 가능) 분석<br>
-        • GET 파라미터 기반 자동 포인트 증가 취약점 발견<br>
-        • 공격 PoC 페이지 제작 & 취약점 개선 방안 문서화
+        • SQLi, XSS, CSRF 공격 재현<br>
+        • GET 기반 포인트 조작 취약점 발견<br>
+        • 공격 PoC 및 개선 방안 문서화
       </p>
     </div>
 
     <div class="project-card">
-      <h3>HQ–Branch 네트워크 설계 및 구축</h3>
+      <h3>HQ–Branch 네트워크 구축</h3>
       <p>
-        • 본사–지사 구조의 대규모 네트워크 설계<br>
-        • VLAN 분리, 서버망/DMZ/백업망 계층화<br>
-        • EIGRP 기반 동적 라우팅 설정<br>
-        • VRRP/HSRP 게이트웨이 이중화 구현<br>
-        • Extended ACL 기반 서비스 접근 통제<br>
-        • 트렁킹, SVI, NAT/PAT, DHCP 등 전체 구성 수행
+        • VLAN 기반 망 분리<br>
+        • EIGRP 동적 라우팅<br>
+        • HSRP/VRRP 이중화<br>
+        • Extended ACL 접근 제어<br>
+        • 서브넷팅
       </p>
     </div>
 
     <div class="project-card">
-      <h3>돌봄 플랫폼 웹 서비스 개발</h3>
+      <h3>돌봄 플랫폼 웹 서비스</h3>
       <p>
-        • 회원가입/로그인, 아이디·비밀번호 찾기 구현<br>
-        • 6자리 인증번호 생성 및 알림 로직 구현<br>
-        • 포인트 지급/환급 기능 및 내역 조회 페이지 제작<br>
-        • 프로필 수정 페이지 및 모달 UI 개발<br>
-        • 지도 API 기반 경사로/엘리베이터 안내 기능 설계
-      </p>
-    </div>
-
-    <div class="project-card">
-      <h3>웹 취약점 PoC 페이지 제작</h3>
-      <p>
-        • XSS 공격 자동 실행 페이지 제작<br>
-        • CSRF 테스트 페이지(form-auto-submit) 구축<br>
-        • 패킷 기반 공격 재현 및 분석 보고서 작성
+        • 로그인/회원가입/인증번호<br>
+        • 포인트 지급·환급 시스템<br>
+        • 지도 기반 편의시설 안내
       </p>
     </div>
 
@@ -235,13 +235,12 @@
 <section id="contact">
   <h2 class="title">연락처</h2>
   <p>Email: sungju03051323@email.com</p>
-  <p>Github: https://github.com/jsj030513</p>
+  <p>GitHub: https://github.com/jsj030513</p>
   <p>Velog: https://velog.io/@sungju030513/posts</p>
 </section>
 
 <footer>
   © 2025 장성주 — All Rights Reserved.
 </footer>
-
 </body>
 </html>
