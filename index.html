@@ -2,231 +2,151 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>포트폴리오 | 장성주</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>포트폴리오 | 장성주</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+
   <style>
-    body {
-      margin: 0;
-      font-family: 'Pretendard', sans-serif;
-      background: #0f0f0f;
-      color: #e8e8e8;
-      line-height: 1.7;
-    }
-    a { color: #4dc3ff; text-decoration: none; }
-    h1, h2, h3 { margin: 0; }
-    header {
-      background: #000;
-      padding: 20px 40px;
-      border-bottom: 1px solid #333;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    header nav a {
-      margin-right: 20px;
-      font-size: 16px;
-    }
-    section {
-      padding: 80px 40px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .title {
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: #4dc3ff;
-      font-weight: 700;
-    }
-    .hero {
-      text-align: center;
-      padding-top: 120px;
-      padding-bottom: 120px;
-    }
-    .hero h1 {
-      font-size: 48px;
-      font-weight: 700;
-    }
-    .hero p {
-      font-size: 20px;
-      color: #bbbbbb;
-    }
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .skill-box {
-      flex: 1;
-      min-width: 240px;
-      padding: 20px;
-      border: 1px solid #333;
-      background: #1a1a1a;
-      border-radius: 10px;
-    }
-    .pill {
-      display: inline-block;
-      padding: 6px 12px;
-      border: 1px solid #333;
-      border-radius: 999px;
-      margin: 6px 6px 0 0;
-      background: #151515;
-      font-size: 13px;
-      color: #cfcfcf;
-    }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-    }
-    .project-card {
-      padding: 20px;
-      border: 1px solid #333;
-      background: #1a1a1a;
-      border-radius: 10px;
-      transition: 0.2s;
-    }
-    .project-card:hover {
-      transform: translateY(-5px);
-      border-color: #4dc3ff;
-    }
-    .project-card h3 {
-      margin-bottom: 10px;
-      font-size: 22px;
-      color: #4dc3ff;
-    }
-    .doc-box {
-      padding: 20px;
-      border: 1px solid #333;
-      background: #121212;
-      border-radius: 10px;
-    }
-    pre {
-      background: #0b0b0b;
-      padding: 16px;
-      border-radius: 10px;
-      border: 1px solid #222;
-      overflow-x: auto;
-      white-space: pre-wrap;
-    }
-    footer {
-      padding: 40px;
-      text-align: center;
-      color: #777;
-      border-top: 1px solid #333;
-      margin-top: 60px;
-    }
+    body { margin:0; font-family:'Pretendard',sans-serif; background:#0f0f0f; color:#e8e8e8; line-height: 1.6; }
+    a { color:#4dc3ff; text-decoration:none; }
+    header { background:#000; padding:20px 40px; border-bottom:1px solid #333; position:sticky; top:0; z-index: 100; }
+    nav a { margin-right:20px; font-size:14px; transition: color 0.3s; }
+    nav a:hover { color: #fff; }
+    section { max-width:1100px; margin:auto; padding:80px 20px; }
+    .hero { text-align:center; padding:140px 20px; }
+    .hero h1 { font-size:52px; margin-bottom: 10px; }
+    .hero p { color:#aaa; font-size: 1.2rem; }
+    .title { font-size:28px; margin-bottom:30px; color:#4dc3ff; border-left: 4px solid #4dc3ff; padding-left: 15px; }
+
+    .highlight { color:#4dc3ff; font-weight:600; }
+
+    .card { background:#1a1a1a; border:1px solid #333; border-radius:10px; padding:25px; margin-bottom:20px; }
+    .card h3 { margin-top: 0; color: #fff; }
+
+    .projects { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:25px; }
+    .project-card { background:#1a1a1a; border:1px solid #333; border-radius:10px; padding:20px; transition: transform 0.3s; }
+    .project-card:hover { transform: translateY(-5px); border-color: #4dc3ff; }
+    .project-card h3 { color:#4dc3ff; margin-bottom:15px; font-size: 1.4rem; }
+    .project-card img { width:100%; border-radius:8px; margin-bottom:15px; background: #333; }
+    .project-card p { font-size: 0.95rem; margin: 8px 0; }
+
+    .tag { display:inline-block; background: #252525; border:1px solid #444; padding:4px 12px; margin:5px 5px 0 0; border-radius:999px; font-size:12px; color: #ccc; }
+
+    footer { text-align:center; padding:60px 40px; color:#777; border-top:1px solid #333; margin-top: 40px; }
   </style>
 </head>
-
 <body>
+
 <header>
   <nav>
     <a href="#about">소개</a>
-    <a href="#skills">보유기술</a>
+    <a href="#core">핵심역량</a>
     <a href="#projects">프로젝트</a>
-    <a href="#subnetting">서브넷팅</a>
     <a href="#contact">연락처</a>
   </nav>
 </header>
 
 <section class="hero">
   <h1>장성주</h1>
-  <p>네트워크 엔지니어 · 보안 분석가 · 웹 서비스 개발자</p>
+  <p>네트워크 기반 위에 보안을 더하는 정보통신 엔지니어</p>
 </section>
 
 <section id="about">
-  <h2 class="title">소개</h2>
-  <p>
-    네트워크 인프라 구축, 정보 보안, 웹 서비스 개발을 함께 수행하는
-    <strong>보안 중심의 실무형 엔지니어</strong>입니다.<br><br>
-    HQ–Branch 구조 네트워크를 직접 설계·구축하며
-    EIGRP, HSRP/VRRP, VLAN, ACL, NAT/PAT 기반의
-    이중화·보안·확장성 구조를 구현했습니다.<br><br>
-    또한 SQL Injection, XSS, CSRF 등 실제 취약점을 재현하고
-    웹 서비스 구조 개선까지 수행한 경험을 보유하고 있습니다.
-  </p>
+  <h2 class="title">한 줄 요약</h2>
+  <div class="card">
+    <p>
+      <span class="highlight">네트워크 구조를 이해하고, 실제 취약점을 분석하여 서비스 보안까지 개선하는 엔지니어</span>입니다.
+      단순한 코드 작성을 넘어 인프라의 안정성과 데이터의 안전성을 동시에 고려합니다.
+    </p>
+  </div>
 </section>
 
-<section id="skills">
-  <h2 class="title">보유 기술</h2>
-  <div class="skills">
+<section id="core">
+  <h2 class="title">핵심 역량</h2>
 
-    <div class="skill-box">
-      <h3>네트워크</h3>
-      <p>
-        VLAN 설계 · EIGRP · VRRP/HSRP<br>
-        ACL 정책 · NAT/PAT · DHCP · Trunk<br>
-        서버망 / DMZ / 백업망 분리
-      </p>
-      <div>
-        <span class="pill">Subnetting (VLSM)</span>
-        <span class="pill">CIDR 계산</span>
-        <span class="pill">Gateway 설계</span>
-        <span class="pill">Route Summarization</span>
-      </div>
-    </div>
+  <div class="card">
+    <h3>1. 네트워크 설계 & 운영</h3>
+    <p>HQ–Branch 구조 설계 경험 / VLAN 분리 / EIGRP 라우팅 / HSRP 이중화</p>
+    <p><strong>성과:</strong> 장애 대응 구조 확보 및 효율적인 트래픽 분산 구조 구현</p>
+  </div>
 
-    <div class="skill-box">
-      <h3>보안</h3>
-      <p>
-        SQL Injection / XSS / CSRF 분석<br>
-        UTM · 방화벽 정책 수립<br>
-        서버 접근 통제 및 계정 관리
-      </p>
-    </div>
+  <div class="card">
+    <h3>2. 보안 취약점 분석</h3>
+    <p>SQL Injection, XSS, CSRF 공격 직접 재현 및 PoC 제작 및 대응 기술 보유</p>
+    <p><strong>성과:</strong> 프로젝트 내 실제 취약점 발견 및 개선 보안 가이드라인 도출</p>
+  </div>
 
-    <div class="skill-box">
-      <h3>백엔드</h3>
-      <p>
-        Java · Oracle 21c · MyBatis<br>
-        Tomcat 9 · XML 기반 설정<br>
-        포인트 지급·환급 로직
-      </p>
-    </div>
-
-    <div class="skill-box">
-      <h3>프론트엔드</h3>
-      <p>
-        HTML / CSS / JavaScript<br>
-        모달 UI · 지도 API 연동<br>
-        공격 재현 페이지 제작
-      </p>
-    </div>
-
+  <div class="card">
+    <h3>3. 웹 서비스 구현</h3>
+    <p>사용자 중심의 UI/UX 설계, DB 연동을 통한 실시간 데이터 처리 시스템 구축</p>
+    <p><strong>성과:</strong> 확장성을 고려한 백엔드 구조 및 직관적인 프론트엔드 인터페이스 완성</p>
   </div>
 </section>
 
 <section id="projects">
-  <h2 class="title">프로젝트</h2>
+  <h2 class="title">프로젝트 (문제 → 해결 → 결과)</h2>
+
   <div class="projects">
 
+    <!-- 프로젝트 1: 보안 취약점 분석 -->
     <div class="project-card">
-      <h3>불펜토크 보안 취약점 분석</h3>
-      <p>
-        • SQLi, XSS, CSRF 공격 재현<br>
-        • GET 기반 포인트 조작 취약점 발견<br>
-        • 공격 PoC 및 개선 방안 문서화
-      </p>
+      <img src="https://via.placeholder.com/400x200?text=Security+Analysis">
+      <h3>보안 취약점 분석</h3>
+      <p><strong>문제:</strong> 서비스 내 포인트 조작 및 정보 유출 가능 구조 발견</p>
+      <p><strong>해결:</strong> 모의 해킹을 통한 공격 재현 및 PoC(Proof of Concept) 제작</p>
+      <p><strong>결과:</strong> 취약점 원인 파악 및 필터링 로직 도입 등 보안 개선 방향 제시</p>
+      <div>
+        <span class="tag">SQLi</span>
+        <span class="tag">XSS</span>
+        <span class="tag">CSRF</span>
+      </div>
+      <br>
+      <a href="https://github.com/jsj030513">GitHub 보기</a>
     </div>
 
+    <!-- 프로젝트 2: 네트워크 인프라 구축 -->
     <div class="project-card">
-      <h3>HQ–Branch 네트워크 구축</h3>
-      <p>
-        • VLAN 기반 망 분리<br>
-        • EIGRP 동적 라우팅<br>
-        • HSRP/VRRP 이중화<br>
-        • Extended ACL 접근 제어<br>
-        • 서브넷팅
-      </p>
+      <img src="https://via.placeholder.com/400x200?text=Network+Infrastructure">
+      <h3>네트워크 인프라 구축</h3>
+      <p><strong>문제:</strong> 서비스 확장에 따른 안정성과 트래픽 처리 효율 부족</p>
+      <p><strong>해결:</strong> VLAN 분리 및 EIGRP, HSRP 이중화 프로토콜 설계</p>
+      <p><strong>결과:</strong> 단일 장애점 제거 및 네트워크 가동 시간 극대화</p>
+      <div>
+        <span class="tag">VLAN</span>
+        <span class="tag">EIGRP</span>
+        <span class="tag">HSRP</span>
+        <span class="tag">L3 Switch</span>
+      </div>
     </div>
 
+    <!-- 프로젝트 3: Self-Med (돌봄 플랫폼) -->
     <div class="project-card">
-      <h3>돌봄 플랫폼 웹 서비스</h3>
-      <p>
-        • 로그인/회원가입/인증번호<br>
-        • 포인트 지급·환급 시스템<br>
-        • 지도 기반 편의시설 안내
-      </p>
+      <img src="https://via.placeholder.com/400x200?text=Self-Med+Project">
+      <h3>Self-Med (의료 정보 플랫폼)</h3>
+      <p><strong>문제:</strong> 이동 약자를 위한 맞춤형 병원 및 의료 시설 정보 부족</p>
+      <p><strong>해결:</strong> SVG 기반 UI와 카카오 맵 API를 연동한 위치 기반 서비스 구현</p>
+      <p><strong>결과:</strong> 직관적인 데이터 시각화로 사용자 편의성을 높인 플랫폼 구축</p>
+      <div>
+        <span class="tag">Java</span>
+        <span class="tag">Oracle</span>
+        <span class="tag">Kakao Map API</span>
+        <span class="tag">SVG</span>
+      </div>
+    </div>
+
+    <!-- 프로젝트 4: 공부명당 (Study-Spot) -->
+    <div class="project-card">
+      <img src="https://via.placeholder.com/400x200?text=Study-Spot+Project">
+      <h3>공부명당 (Study-Spot)</h3>
+      <p><strong>문제:</strong> 지역 내(안서동) 학습 환경에 대한 체계적인 정보 파악의 어려움</p>
+      <p><strong>해결:</strong> 카테고리별 스터디 공간 데이터 수집 및 매핑 서비스 기획/개발</p>
+      <p><strong>결과:</strong> 사용자 위치 기반 최적 학습 공간 추천 서비스 완성</p>
+      <div>
+        <span class="tag">Local Data</span>
+        <span class="tag">Data Mapping</span>
+        <span class="tag">Web Service</span>
+      </div>
     </div>
 
   </div>
@@ -234,13 +154,16 @@
 
 <section id="contact">
   <h2 class="title">연락처</h2>
-  <p>Email: sungju03051323@email.com</p>
-  <p>GitHub: https://github.com/jsj030513</p>
-  <p>Velog: https://velog.io/@sungju030513/posts</p>
+  <div class="card">
+    <p>📧 Email: <a href="mailto:sungju03051323@email.com">sungju03051323@email.com</a></p>
+    <p>💻 GitHub: <a href="https://github.com/jsj030513" target="_blank">github.com/jsj030513</a></p>
+    <p>📝 Velog: <a href="https://velog.io/@sungju030513" target="_blank">velog.io/@sungju030513</a></p>
+  </div>
 </section>
 
 <footer>
-  © 2025 장성주 — All Rights Reserved.
+  © 2026 Jang Sungju. All rights reserved.
 </footer>
+
 </body>
 </html>
