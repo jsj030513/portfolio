@@ -8,249 +8,196 @@
   <style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.7;
-      color: #1f2937;
-      background: #f8fafc;
-    }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.72; color: #1f2937; background: #f8fafc; }
     a { color: #2563eb; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255,255,255,.96);
-      border-bottom: 1px solid #e5e7eb;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      min-height: 60px;
-      gap: 16px;
-    }
+    .wrap { max-width: 1020px; margin: 0 auto; padding: 0 24px; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.96); border-bottom: 1px solid #e5e7eb; backdrop-filter: blur(8px); }
+    nav { min-height: 62px; display: flex; justify-content: space-between; align-items: center; gap: 18px; }
     nav strong { color: #111827; }
-    nav .links { display: flex; gap: 18px; font-size: 14px; }
-    .hero {
-      padding: 96px 0 72px;
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
-    }
-    .eyebrow {
-      margin: 0 0 12px;
-      font-size: 14px;
-      font-weight: 700;
-      color: #2563eb;
-      letter-spacing: .04em;
-    }
-    h1 { margin: 0; font-size: clamp(34px, 7vw, 54px); line-height: 1.15; color: #111827; }
-    .hero p { max-width: 720px; margin: 20px 0 0; font-size: 18px; color: #4b5563; }
+    nav .links { display: flex; gap: 18px; flex-wrap: wrap; font-size: 14px; }
+    .hero { padding: 100px 0 78px; background: #fff; border-bottom: 1px solid #e5e7eb; }
+    .eyebrow { margin: 0 0 12px; color: #2563eb; font-size: 14px; font-weight: 800; letter-spacing: .06em; }
+    h1 { margin: 0; color: #111827; font-size: clamp(38px, 7vw, 58px); line-height: 1.12; }
+    .hero p { max-width: 760px; margin: 20px 0 0; color: #4b5563; font-size: 18px; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
-    .button {
-      display: inline-block;
-      padding: 10px 15px;
-      border: 1px solid #d1d5db;
-      border-radius: 8px;
-      background: #fff;
-      color: #111827;
-      font-weight: 600;
-    }
-    .button.primary { background: #111827; border-color: #111827; color: white; }
-    section { padding: 64px 0; }
+    .button { display: inline-block; padding: 10px 15px; border: 1px solid #d1d5db; border-radius: 9px; background: #fff; color: #111827; font-weight: 700; }
+    .button.primary { background: #111827; color: #fff; border-color: #111827; }
+    section { padding: 66px 0; }
     section + section { border-top: 1px solid #e5e7eb; }
-    h2 { margin: 0 0 24px; font-size: 28px; color: #111827; }
-    h3 { margin: 0 0 10px; color: #111827; }
+    h2 { margin: 0 0 24px; color: #111827; font-size: 29px; }
+    h3 { margin: 0 0 9px; color: #111827; }
     .muted { color: #6b7280; }
-    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-    .card {
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 24px;
-    }
+    .small { font-size: 14px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+    .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 24px; }
     .card p { margin: 8px 0; }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-    .tag {
-      padding: 5px 9px;
-      border-radius: 999px;
-      background: #eff6ff;
-      color: #1d4ed8;
-      font-size: 12px;
-      font-weight: 600;
-    }
-    .project { margin-bottom: 18px; }
+    .project { margin-bottom: 20px; }
     .project:last-child { margin-bottom: 0; }
-    .project strong { color: #111827; }
-    .flow {
-      margin-top: 16px;
-      padding: 14px 16px;
-      border-radius: 8px;
-      background: #f3f4f6;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 13px;
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-    footer { padding: 36px 0 48px; color: #6b7280; font-size: 14px; }
+    .project-head { display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; }
+    .project-head .label { white-space: nowrap; color: #2563eb; font-size: 12px; font-weight: 800; background: #eff6ff; border-radius: 999px; padding: 5px 9px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 15px; }
+    .tag { padding: 5px 9px; border-radius: 999px; background: #f3f4f6; color: #374151; font-size: 12px; font-weight: 650; }
+    .flow { margin-top: 16px; padding: 14px 16px; border-radius: 9px; background: #111827; color: #f9fafb; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; overflow-x: auto; white-space: nowrap; }
+    .links-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 15px; font-weight: 700; font-size: 14px; }
+    .timeline { display: grid; gap: 14px; }
+    footer { padding: 38px 0 50px; color: #6b7280; font-size: 14px; }
     @media (max-width: 720px) {
-      nav { align-items: flex-start; padding: 14px 0; }
-      nav .links { flex-wrap: wrap; justify-content: flex-end; }
+      nav { padding: 13px 0; align-items: flex-start; }
+      nav .links { justify-content: flex-end; gap: 10px; }
       .hero { padding-top: 72px; }
       .grid { grid-template-columns: 1fr; }
+      .project-head { display: block; }
+      .project-head .label { display: inline-block; margin-top: 8px; }
     }
   </style>
 </head>
 <body>
-  <header>
+<header>
+  <div class="wrap">
+    <nav>
+      <strong>Jang Sungju</strong>
+      <div class="links">
+        <a href="#about">소개</a>
+        <a href="#skills">역량</a>
+        <a href="#projects">프로젝트</a>
+        <a href="#education">교육·수상</a>
+        <a href="#contact">연락처</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
     <div class="wrap">
-      <nav>
-        <strong>Jang Sungju</strong>
-        <div class="links">
-          <a href="#about">소개</a>
-          <a href="#skills">역량</a>
-          <a href="#projects">프로젝트</a>
-          <a href="#contact">연락처</a>
-        </div>
-      </nav>
+      <p class="eyebrow">NETWORK · SECURITY · TROUBLESHOOTING</p>
+      <h1>장성주</h1>
+      <p>네트워크 구조와 시스템 동작을 이해하고, 문제 발생 시 통신 경로·로그·설정값을 기준으로 원인을 단계적으로 좁혀가는 보안·네트워크 기술지원 엔지니어를 목표로 하고 있습니다.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#projects">프로젝트 보기</a>
+        <a class="button" href="https://github.com/jsj030513" target="_blank" rel="noopener">GitHub Profile</a>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section class="hero">
-      <div class="wrap">
-        <p class="eyebrow">NETWORK · SECURITY · TROUBLESHOOTING</p>
-        <h1>장성주</h1>
-        <p>
-          네트워크 구조와 시스템 동작을 이해하고, 문제 발생 시 통신 경로와 로그를 기준으로
-          원인을 단계적으로 좁혀가는 보안·네트워크 기술지원 엔지니어를 목표로 하고 있습니다.
-        </p>
-        <div class="hero-actions">
-          <a class="button primary" href="#projects">프로젝트 보기</a>
-          <a class="button" href="https://github.com/jsj030513" target="_blank" rel="noopener">GitHub</a>
-        </div>
+  <section id="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <div class="card">
+        <p>K-Digital Training의 <strong>웹서버개발 및 웹보안 솔루션 구축 융합과정</strong>을 통해 개발, 서버, DBMS, 네트워크, 웹 보안을 함께 학습했습니다.</p>
+        <p>Cisco Packet Tracer와 GNS3를 활용한 네트워크 구축 실습, Burp Suite 기반 웹 보안 점검, Java/Spring 기반 서비스 개발 경험을 바탕으로 제품 기능만 보는 것이 아니라 고객 환경의 <strong>네트워크·서버·애플리케이션 전체 흐름</strong>을 이해하는 엔지니어를 준비하고 있습니다.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="about">
-      <div class="wrap">
-        <h2>About</h2>
+  <section id="skills">
+    <div class="wrap">
+      <h2>Core Skills</h2>
+      <div class="grid">
         <div class="card">
-          <p>
-            K-Digital Training의 웹서버개발 및 웹보안 솔루션 구축 융합과정을 통해
-            개발, 서버, DBMS, 네트워크, 웹 보안을 함께 학습했습니다.
-          </p>
-          <p>
-            Cisco Packet Tracer와 GNS3를 활용한 네트워크 실습과 Burp Suite 기반 웹 보안 점검 경험을 바탕으로,
-            제품 기능만 보는 것이 아니라 고객 환경의 네트워크·서버·애플리케이션을 함께 이해하는 엔지니어를 준비하고 있습니다.
-          </p>
+          <h3>Network</h3>
+          <p>VLAN, Trunking, Routing, EIGRP, HSRP/VRRP, ACL, NAT/PAT, DHCP, DMZ</p>
+          <div class="tags"><span class="tag">Packet Tracer</span><span class="tag">GNS3</span><span class="tag">Troubleshooting</span></div>
         </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="wrap">
-        <h2>Core Skills</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>Network</h3>
-            <p>VLAN, Trunking, Routing, EIGRP, HSRP/VRRP, ACL, NAT/PAT, DHCP, DMZ</p>
-            <div class="tags">
-              <span class="tag">Packet Tracer</span>
-              <span class="tag">GNS3</span>
-              <span class="tag">Troubleshooting</span>
-            </div>
-          </div>
-          <div class="card">
-            <h3>Security</h3>
-            <p>HTTP Request 분석, Parameter 변조 검증, SQL Injection, XSS, CSRF 실습</p>
-            <div class="tags">
-              <span class="tag">Burp Suite</span>
-              <span class="tag">Web Security</span>
-              <span class="tag">VLAN / ACL</span>
-            </div>
-          </div>
-          <div class="card">
-            <h3>Development</h3>
-            <p>웹 서비스의 요청·응답 흐름과 백엔드 처리 구조를 이해하기 위한 개발 프로젝트 경험</p>
-            <div class="tags">
-              <span class="tag">Java</span>
-              <span class="tag">Spring Boot</span>
-              <span class="tag">DBMS</span>
-            </div>
-          </div>
-          <div class="card">
-            <h3>Work Style</h3>
-            <p>요구사항 확인 → 직접 재현/검증 → 문제 구간 분리 → 조치 내용 기록의 순서로 문제를 분석합니다.</p>
-            <div class="tags">
-              <span class="tag">Documentation</span>
-              <span class="tag">Collaboration</span>
-              <span class="tag">PM Experience</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="wrap">
-        <h2>Projects</h2>
-
-        <article class="card project">
-          <h3>HQ–Branch Network Lab</h3>
-          <p class="muted">네트워크 구축 및 장애분석 실습</p>
-          <p><strong>구성:</strong> VLAN, Trunking, EIGRP, HSRP/VRRP, ACL, NAT/PAT, DHCP, DMZ, Routing</p>
-          <p><strong>핵심 경험:</strong> HQ Server와 Branch Backup 간 통신 장애 상황에서 설정을 무작정 변경하지 않고 패킷 이동 경로를 순서대로 점검해 문제 구간을 좁혔습니다.</p>
-          <div class="flow">Source IP → Gateway → Router Interface → Routing Table → ACL → Destination → Reverse Routing</div>
-        </article>
-
-        <article class="card project">
-          <h3>Closer — Safe Dugout 보안 점검/개선</h3>
-          <p class="muted">약 1개월 반 · PM</p>
-          <p><strong>웹 보안:</strong> Burp Suite로 HTTP Request를 분석하고 Parameter 값을 변경해 서버 처리 결과를 검증했습니다.</p>
-          <p><strong>인프라 보안:</strong> VLAN과 ACL을 적용하며 애플리케이션과 네트워크를 함께 고려했습니다.</p>
-          <p><strong>역할:</strong> 팀원 진행 상황을 취합하고 일정과 작업 범위를 조율했습니다.</p>
-          <div class="tags">
-            <span class="tag">Burp Suite</span>
-            <span class="tag">HTTP</span>
-            <span class="tag">VLAN</span>
-            <span class="tag">ACL</span>
-            <span class="tag">PM</span>
-          </div>
-        </article>
-
-        <article class="card project">
-          <h3>함께걸음 — 배리어프리 정보·돌봄회원 매칭 웹 서비스</h3>
-          <p class="muted">약 1개월 반 · 부팀장 / 개발</p>
-          <p><strong>담당:</strong> 로그인, 회원가입, 돌봄회원 마이페이지 및 프론트엔드·백엔드 개발에 참여했습니다.</p>
-          <p><strong>협업:</strong> 담당 기능 완료 후 전체 일정이 지연된 팀원의 개발 작업을 지원했습니다.</p>
-          <div class="tags">
-            <span class="tag">Java</span>
-            <span class="tag">Web</span>
-            <span class="tag">Frontend</span>
-            <span class="tag">Backend</span>
-            <span class="tag">Collaboration</span>
-          </div>
-          <p><a href="https://github.com/jsj030513/workTogether_frontend" target="_blank" rel="noopener">Frontend Repository</a> · <a href="https://github.com/jsj030513/workTogether_backend" target="_blank" rel="noopener">Backend Repository</a></p>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="wrap">
-        <h2>Contact</h2>
         <div class="card">
-          <p><strong>GitHub</strong> · <a href="https://github.com/jsj030513" target="_blank" rel="noopener">github.com/jsj030513</a></p>
-          <p><strong>Email</strong> · <a href="mailto:sungju03051323@gmail.com">sungju03051323@gmail.com</a></p>
+          <h3>Security</h3>
+          <p>HTTP Request 분석, Parameter 변조 검증, SQL Injection, XSS, CSRF 실습</p>
+          <div class="tags"><span class="tag">Burp Suite</span><span class="tag">Web Security</span><span class="tag">VLAN / ACL</span></div>
+        </div>
+        <div class="card">
+          <h3>Backend & Operations</h3>
+          <p>Java/Spring 기반 API, 인증, DB 연동, Docker 기반 실행환경과 CI 테스트 경험</p>
+          <div class="tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span></div>
+        </div>
+        <div class="card">
+          <h3>Problem Solving</h3>
+          <p>요구사항 확인 → 재현/검증 → 문제 구간 분리 → 조치 및 결과 기록 순서로 문제를 분석합니다.</p>
+          <div class="tags"><span class="tag">Documentation</span><span class="tag">Collaboration</span><span class="tag">PM Experience</span></div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer>
-    <div class="wrap">© 2026 Jang Sungju · Network & Security Portfolio</div>
-  </footer>
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+
+      <article class="card project">
+        <div class="project-head"><div><h3>01. HQ–Branch Network Lab</h3><p class="muted">네트워크 구축 및 장애분석 실습</p></div><span class="label">NETWORK</span></div>
+        <p><strong>목표:</strong> 본사와 지사 환경을 구성하고 네트워크 분리, 라우팅, 이중화, 접근제어 및 서버 통신을 실습했습니다.</p>
+        <p><strong>구성:</strong> VLAN, Trunking, EIGRP, HSRP/VRRP, ACL, NAT/PAT, DHCP, DMZ, Routing</p>
+        <p><strong>문제 해결:</strong> HQ Server와 Branch Backup 간 통신 장애 상황에서 설정을 반복 변경하지 않고 패킷 이동 경로를 순서대로 확인해 문제 구간을 좁혔습니다.</p>
+        <div class="flow">Source IP → Gateway → Router Interface → Routing Table → ACL → Destination → Reverse Routing</div>
+        <p><strong>배운 점:</strong> 장애 대응에서 중요한 것은 장비 설정을 먼저 바꾸는 것이 아니라 정상 구간과 비정상 구간을 구분해 원인을 좁히는 것임을 익혔습니다.</p>
+      </article>
+
+      <article class="card project">
+        <div class="project-head"><div><h3>02. Closer — Safe Dugout 보안 점검/개선</h3><p class="muted">약 1개월 반 · PM · K-Digital Training</p></div><span class="label">SECURITY</span></div>
+        <p><strong>목표:</strong> 기존 Safe Dugout 서비스의 애플리케이션과 인프라 환경을 함께 점검했습니다.</p>
+        <p><strong>웹 보안:</strong> Burp Suite로 HTTP Request를 확인하고 Parameter 값을 변경해 서버 처리 결과를 검증했습니다. SQL Injection, XSS, CSRF 등 웹 취약점 실습 경험을 활용했습니다.</p>
+        <p><strong>인프라 보안:</strong> VLAN과 ACL을 활용해 네트워크 영역과 접근범위를 고려했습니다.</p>
+        <p><strong>역할:</strong> PM으로 팀원 진행 상황을 취합하고 작업 범위와 일정을 조율했습니다.</p>
+        <p><strong>배운 점:</strong> 웹 취약점만 따로 보는 것이 아니라 요청 흐름, 서버 처리, 네트워크 구조를 함께 확인해야 문제를 정확하게 판단할 수 있음을 배웠습니다.</p>
+        <div class="tags"><span class="tag">Burp Suite</span><span class="tag">HTTP</span><span class="tag">SQLi</span><span class="tag">XSS</span><span class="tag">CSRF</span><span class="tag">VLAN</span><span class="tag">ACL</span><span class="tag">PM</span></div>
+        <div class="links-row"><a href="https://holly-libra-3fe.notion.site/_2-_Team-CLOSER_BullpenTalk-29d10472fed680f890cbc769ed8fa22b?pvs=74" target="_blank" rel="noopener">프로젝트 문서</a></div>
+      </article>
+
+      <article class="card project">
+        <div class="project-head"><div><h3>03. 함께걸음 — 배리어프리 정보·돌봄회원 매칭 웹 서비스</h3><p class="muted">약 1개월 반 · 부팀장 / 개발 · K-Digital Training</p></div><span class="label">WEB / TEAM</span></div>
+        <p><strong>서비스:</strong> 배리어프리 식당 정보, 지하철 엘리베이터 위치 정보, 돌봄회원 연결 기능을 제공하는 웹 서비스입니다.</p>
+        <p><strong>담당:</strong> 로그인, 회원가입, 돌봄회원 마이페이지를 담당했고 프론트엔드와 백엔드 개발 전반에 참여했습니다.</p>
+        <p><strong>협업:</strong> 담당 기능을 일정 내 완료한 뒤 전체 진행 상황을 확인하고 일정이 지연된 팀원의 개발 작업을 지원했습니다.</p>
+        <p><strong>배운 점:</strong> 개인 기능의 완료가 아니라 팀 전체 서비스 완성을 기준으로 작업 범위를 조정하는 협업 방식을 경험했습니다.</p>
+        <div class="tags"><span class="tag">Web Service</span><span class="tag">Frontend</span><span class="tag">Backend</span><span class="tag">Authentication</span><span class="tag">Collaboration</span></div>
+        <div class="links-row"><a href="https://github.com/jsj030513/workTogether_frontend" target="_blank" rel="noopener">Frontend Repository</a><a href="https://github.com/jsj030513/workTogether_backend" target="_blank" rel="noopener">Backend Repository</a></div>
+      </article>
+
+      <article class="card project">
+        <div class="project-head"><div><h3>04. Project Eden</h3><p class="muted">개인 개발 프로젝트 · Backend / Frontend</p></div><span class="label">BACKEND / SYSTEM</span></div>
+        <p><strong>개요:</strong> 캐릭터와 월드 상호작용을 중심으로 한 웹 기반 게임 프로젝트입니다.</p>
+        <p><strong>Backend:</strong> Spring Boot 기반으로 회원가입·로그인·내 정보 조회·캐릭터 API를 구성하고 JWT 인증을 적용했습니다.</p>
+        <p><strong>운영 기반:</strong> Docker Compose 실행환경, Health Check, 환경변수 기반 비밀값 관리, GitHub Actions의 Maven 테스트 자동화를 구성했습니다.</p>
+        <p><strong>Frontend:</strong> React/Vite 기반 클라이언트와 연결하여 사용자 입력, 캐릭터 이동 및 상호작용 기능을 구현했습니다.</p>
+        <p><strong>배운 점:</strong> 프론트엔드 기능 구현뿐 아니라 서버 권한, API 계약, 인증, 테스트와 배포 환경까지 함께 관리하는 경험을 쌓았습니다.</p>
+        <div class="tags"><span class="tag">Spring Boot</span><span class="tag">JWT</span><span class="tag">Docker</span><span class="tag">CI</span><span class="tag">React</span><span class="tag">REST API</span></div>
+        <div class="links-row"><a href="https://github.com/jsj030513/project-eden-backend" target="_blank" rel="noopener">Backend Repository</a><a href="https://github.com/jsj030513/project-eden-frontend" target="_blank" rel="noopener">Frontend Repository</a></div>
+      </article>
+
+      <article class="card project">
+        <div class="project-head"><div><h3>05. ARB//KOREA — 거래소 가격 비교·자동화 시스템</h3><p class="muted">개인 프로젝트 · Spring Boot</p></div><span class="label">BACKEND / OPERATIONS</span></div>
+        <p><strong>개요:</strong> 업비트와 빗썸의 KRW 마켓을 비교하고 호가 잔량, 슬리피지, 수수료를 반영해 차익 기회를 계산하는 개인용 애플리케이션입니다.</p>
+        <p><strong>Backend:</strong> 시장 스캔, 거래소 연결, 잔고 조회, 주문기록 관리와 사용자별 자동거래 설정 기능을 구성했습니다.</p>
+        <p><strong>안전장치:</strong> 실제 주문 기능을 다중 환경변수와 사용자 스위치로 제한하고, 로그인 실패 잠금, 세션 만료, 비상정지, 주문 장애 알림 등을 적용했습니다.</p>
+        <p><strong>운영 관점:</strong> Docker 실행환경과 API Key 최소 권한, Git에 올리지 않아야 할 비밀정보 분리, 외부 공개 시 HTTPS 리버스 프록시와 방화벽 적용을 고려했습니다.</p>
+        <p><strong>배운 점:</strong> 기능 구현뿐 아니라 실서비스에서 필요한 운영 안전장치, 비밀정보 관리, 장애 발생 시 중단·알림 구조의 중요성을 경험했습니다.</p>
+        <div class="tags"><span class="tag">Spring Boot</span><span class="tag">REST API</span><span class="tag">Docker</span><span class="tag">Security</span><span class="tag">Operations</span></div>
+        <div class="links-row"><a href="https://github.com/jsj030513/Coin" target="_blank" rel="noopener">Repository</a></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <h2>Education & Award</h2>
+      <div class="timeline">
+        <div class="card"><h3>K-Digital Training</h3><p><strong>2025.06.11 ~ 2025.12.24</strong></p><p>(정보보안) 웹서버개발 및 웹보안 솔루션 구축 융합과정 · 코리아IT아카데미</p></div>
+        <div class="card"><h3>2026 창업발명공모전 장려상</h3><p><strong>2026.06.26</strong> · (사)국제문화기술진흥원</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <div class="card">
+        <p><strong>GitHub</strong> · <a href="https://github.com/jsj030513" target="_blank" rel="noopener">github.com/jsj030513</a></p>
+        <p><strong>Email</strong> · <a href="mailto:sungju03051323@gmail.com">sungju03051323@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© 2026 Jang Sungju · Network & Security Portfolio</div></footer>
 </body>
 </html>
