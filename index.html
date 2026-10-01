@@ -124,27 +124,20 @@
       <h2>Projects</h2>
 
       <article class="card project">
-        <div class="project-head"><div><h3>01. HQ–Branch Network Lab</h3><p class="muted">네트워크 구축 및 장애분석 실습</p></div><span class="label">NETWORK</span></div>
-        <p><strong>목표:</strong> 본사와 지사 환경을 구성하고 네트워크 분리, 라우팅, 이중화, 접근제어 및 서버 통신을 실습했습니다.</p>
-        <p><strong>구성:</strong> VLAN, Trunking, EIGRP, HSRP/VRRP, ACL, NAT/PAT, DHCP, DMZ, Routing</p>
-        <p><strong>문제 해결:</strong> HQ Server와 Branch Backup 간 통신 장애 상황에서 설정을 반복 변경하지 않고 패킷 이동 경로를 순서대로 확인해 문제 구간을 좁혔습니다.</p>
-        <div class="flow">Source IP → Gateway → Router Interface → Routing Table → ACL → Destination → Reverse Routing</div>
-        <p><strong>배운 점:</strong> 장애 대응에서 중요한 것은 장비 설정을 먼저 바꾸는 것이 아니라 정상 구간과 비정상 구간을 구분해 원인을 좁히는 것임을 익혔습니다.</p>
-      </article>
-
-      <article class="card project">
-        <div class="project-head"><div><h3>02. Closer — Safe Dugout 보안 점검/개선</h3><p class="muted">약 1개월 반 · PM · K-Digital Training</p></div><span class="label">SECURITY</span></div>
-        <p><strong>목표:</strong> 기존 Safe Dugout 서비스의 애플리케이션과 인프라 환경을 함께 점검했습니다.</p>
-        <p><strong>웹 보안:</strong> Burp Suite로 HTTP Request를 확인하고 Parameter 값을 변경해 서버 처리 결과를 검증했습니다. SQL Injection, XSS, CSRF 등 웹 취약점 실습 경험을 활용했습니다.</p>
-        <p><strong>인프라 보안:</strong> VLAN과 ACL을 활용해 네트워크 영역과 접근범위를 고려했습니다.</p>
-        <p><strong>역할:</strong> PM으로 팀원 진행 상황을 취합하고 작업 범위와 일정을 조율했습니다.</p>
-        <p><strong>배운 점:</strong> 웹 취약점만 따로 보는 것이 아니라 요청 흐름, 서버 처리, 네트워크 구조를 함께 확인해야 문제를 정확하게 판단할 수 있음을 배웠습니다.</p>
-        <div class="tags"><span class="tag">Burp Suite</span><span class="tag">HTTP</span><span class="tag">SQLi</span><span class="tag">XSS</span><span class="tag">CSRF</span><span class="tag">VLAN</span><span class="tag">ACL</span><span class="tag">PM</span></div>
+        <div class="project-head"><div><h3>01. Closer — Safe Dugout 웹·네트워크 보안 점검/개선</h3><p class="muted">약 1개월 반 · PM / 웹 보안 점검·네트워크 구성 · K-Digital Training 교육 프로젝트</p></div><span class="label">SECURITY / NETWORK</span></div>
+        <p><strong>목표:</strong> 국비지원 K-Digital Training ‘웹서버개발 및 웹보안 솔루션 구축 융합과정’에서 기존 Safe Dugout 서비스의 애플리케이션과 인프라 환경을 함께 점검했습니다.</p>
+        <p><strong>웹 보안:</strong> Burp Suite로 HTTP 요청을 분석하고 파라미터 변경에 따른 서버 처리 결과를 검증했습니다.</p>
+        <p><strong>네트워크 구성:</strong> Closer 프로젝트의 일환으로 Packet Tracer를 활용해 본사·지사 네트워크를 구성하고, VLAN, ACL, 이중화, 라우팅을 적용해 네트워크 영역을 분리하고 접근통제를 설정했습니다.</p>
+        <p><strong>장애 분석:</strong> 본사 서버와 지사 백업 간 통신 장애 상황에서 게이트웨이, 라우팅 테이블, ACL 및 역방향 경로를 순차적으로 확인하며 문제 구간을 좁혔습니다.</p>
+        <div class="flow">Gateway → Routing Table → ACL → Reverse Routing</div>
+        <p><strong>역할:</strong> PM으로 팀원별 진행 상황을 취합하고 작업 범위와 일정을 조율했습니다.</p>
+        <p><strong>배운 점:</strong> 웹 요청 흐름과 네트워크 구조를 함께 확인하며 보안 문제를 분석하는 접근법을 익혔습니다.</p>
+        <div class="tags"><span class="tag">Burp Suite</span><span class="tag">HTTP</span><span class="tag">Packet Tracer</span><span class="tag">VLAN</span><span class="tag">ACL</span><span class="tag">Routing</span><span class="tag">Troubleshooting</span><span class="tag">PM</span></div>
         <div class="links-row"><a href="https://holly-libra-3fe.notion.site/_2-_Team-CLOSER_BullpenTalk-29d10472fed680f890cbc769ed8fa22b?pvs=74" target="_blank" rel="noopener">프로젝트 문서</a></div>
       </article>
 
       <article class="card project">
-        <div class="project-head"><div><h3>03. 함께걸음 — 배리어프리 정보·돌봄회원 매칭 웹 서비스</h3><p class="muted">약 1개월 반 · 부팀장 / 개발 · K-Digital Training</p></div><span class="label">WEB / TEAM</span></div>
+        <div class="project-head"><div><h3>02. 함께걸음 — 배리어프리 정보·돌봄회원 매칭 웹 서비스</h3><p class="muted">약 1개월 반 · 부팀장 / 개발 · K-Digital Training</p></div><span class="label">WEB / TEAM</span></div>
         <p><strong>서비스:</strong> 배리어프리 식당 정보, 지하철 엘리베이터 위치 정보, 돌봄회원 연결 기능을 제공하는 웹 서비스입니다.</p>
         <p><strong>담당:</strong> 로그인, 회원가입, 돌봄회원 마이페이지를 담당했고 프론트엔드와 백엔드 개발 전반에 참여했습니다.</p>
         <p><strong>협업:</strong> 담당 기능을 일정 내 완료한 뒤 전체 진행 상황을 확인하고 일정이 지연된 팀원의 개발 작업을 지원했습니다.</p>
@@ -154,7 +147,7 @@
       </article>
 
       <article class="card project">
-        <div class="project-head"><div><h3>04. Project Eden</h3><p class="muted">개인 개발 프로젝트 · Backend / Frontend</p></div><span class="label">BACKEND / SYSTEM</span></div>
+        <div class="project-head"><div><h3>03. Project Eden</h3><p class="muted">개인 개발 프로젝트 · Backend / Frontend</p></div><span class="label">BACKEND / SYSTEM</span></div>
         <p><strong>개요:</strong> 캐릭터와 월드 상호작용을 중심으로 한 웹 기반 게임 프로젝트입니다.</p>
         <p><strong>Backend:</strong> Spring Boot 기반으로 회원가입·로그인·내 정보 조회·캐릭터 API를 구성하고 JWT 인증을 적용했습니다.</p>
         <p><strong>운영 기반:</strong> Docker Compose 실행환경, Health Check, 환경변수 기반 비밀값 관리, GitHub Actions의 Maven 테스트 자동화를 구성했습니다.</p>
@@ -165,7 +158,7 @@
       </article>
 
       <article class="card project">
-        <div class="project-head"><div><h3>05. ARB//KOREA — 거래소 가격 비교·자동화 시스템</h3><p class="muted">개인 프로젝트 · Spring Boot</p></div><span class="label">BACKEND / OPERATIONS</span></div>
+        <div class="project-head"><div><h3>04. ARB//KOREA — 거래소 가격 비교·자동화 시스템</h3><p class="muted">개인 프로젝트 · Spring Boot</p></div><span class="label">BACKEND / OPERATIONS</span></div>
         <p><strong>개요:</strong> 업비트와 빗썸의 KRW 마켓을 비교하고 호가 잔량, 슬리피지, 수수료를 반영해 차익 기회를 계산하는 개인용 애플리케이션입니다.</p>
         <p><strong>Backend:</strong> 시장 스캔, 거래소 연결, 잔고 조회, 주문기록 관리와 사용자별 자동거래 설정 기능을 구성했습니다.</p>
         <p><strong>안전장치:</strong> 실제 주문 기능을 다중 환경변수와 사용자 스위치로 제한하고, 로그인 실패 잠금, 세션 만료, 비상정지, 주문 장애 알림 등을 적용했습니다.</p>
