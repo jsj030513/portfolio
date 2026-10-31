@@ -60,6 +60,7 @@
       <div class="links">
         <a href="#about">소개</a>
         <a href="#skills">역량</a>
+        <a href="#operations">운영·문제해결</a>
         <a href="#projects">프로젝트</a>
         <a href="#education">교육·수상</a>
         <a href="#contact">연락처</a>
@@ -71,9 +72,9 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">NETWORK · SECURITY · TROUBLESHOOTING</p>
+      <p class="eyebrow">INFRASTRUCTURE · NETWORK · SECURITY · TROUBLESHOOTING</p>
       <h1>장성주</h1>
-      <p>네트워크 구조와 시스템 동작을 이해하고, 문제 발생 시 통신 경로·로그·설정값을 기준으로 원인을 단계적으로 좁혀가는 보안·네트워크 기술지원 엔지니어를 목표로 하고 있습니다.</p>
+      <p>Linux 기반 시스템과 네트워크의 안정적인 운영에 관심이 있습니다. Docker·Colima 기반 개인 개발 환경에서 서비스 상태를 점검하고, VLAN·ACL 실습을 통해 통신 장애의 원인을 설정과 경로에서 분석했습니다. 로그와 검증을 근거로 문제를 해결하는 인프라·보안 엔지니어를 목표로 합니다.</p>
       <div class="hero-actions">
         <a class="button primary" href="#projects">프로젝트 보기</a>
         <a class="button" href="https://github.com/jsj030513" target="_blank" rel="noopener">GitHub Profile</a>
@@ -86,7 +87,8 @@
       <h2>About</h2>
       <div class="card">
         <p>K-Digital Training의 <strong>웹서버개발 및 웹보안 솔루션 구축 융합과정</strong>을 통해 개발, 서버, DBMS, 네트워크, 웹 보안을 함께 학습했습니다.</p>
-        <p>Cisco Packet Tracer와 GNS3를 활용한 네트워크 구축 실습, Burp Suite 기반 웹 보안 점검, Java/Spring 기반 서비스 개발 경험을 바탕으로 제품 기능만 보는 것이 아니라 고객 환경의 <strong>네트워크·서버·애플리케이션 전체 흐름</strong>을 이해하는 엔지니어를 준비하고 있습니다.</p>
+        <p>Packet Tracer와 GNS3를 활용한 네트워크 구성, Burp Suite 기반 요청 변조 실습과 함께 Mac mini에서 Docker·Colima, PostgreSQL·Redis 기반 개발 환경의 실행 상태를 점검하고 있습니다. <strong>네트워크·서버·애플리케이션 전체 흐름</strong>을 근거로 문제를 분석하려고 노력합니다.</p>
+        <p class="muted small">아래 경험은 교육 실습 및 개인 프로젝트 기준입니다. 상용 데이터센터 운영 경력과 구분해 기재했습니다.</p>
       </div>
     </div>
   </section>
@@ -106,9 +108,9 @@
           <div class="tags"><span class="tag">Burp Suite</span><span class="tag">Web Security</span><span class="tag">VLAN / ACL</span></div>
         </div>
         <div class="card">
-          <h3>Backend & Operations</h3>
-          <p>Java/Spring 기반 API, 인증, DB 연동, Docker 기반 실행환경과 CI 테스트 경험</p>
-          <div class="tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span></div>
+          <h3>Linux & Infrastructure</h3>
+          <p>Linux 프로세스·네트워크·디스크 점검 명령어 학습과 Docker·Colima 실행환경 구성, PostgreSQL·Redis의 서비스 실행·연동 상태 확인 경험</p>
+          <div class="tags"><span class="tag">Linux</span><span class="tag">Docker / Colima</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">SSH</span></div>
         </div>
         <div class="card">
           <h3>Problem Solving</h3>
@@ -119,16 +121,45 @@
     </div>
   </section>
 
+  <section id="operations">
+    <div class="wrap">
+      <h2>Infrastructure Operations & Troubleshooting</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>서비스 상태 점검</h3>
+          <p>컨테이너 상태, 서비스 포트, 실행 로그 및 Health Check를 확인하며 개인 개발 환경의 구성요소가 연결되어 작동하는지 점검했습니다.</p>
+          <div class="tags"><span class="tag">Docker Compose</span><span class="tag">Health Check</span><span class="tag">Linux</span><span class="tag">SSH</span></div>
+        </div>
+        <div class="card">
+          <h3>통신 장애 원인 분석</h3>
+          <p>VLAN·라우팅·ACL 구성을 구분해 확인하고, 본사·지사 간 필요한 통신을 차단한 ACL 규칙을 찾아 허용 정책을 수정하는 실습을 진행했습니다.</p>
+          <div class="tags"><span class="tag">Packet Tracer</span><span class="tag">VLAN</span><span class="tag">ACL</span><span class="tag">Troubleshooting</span></div>
+        </div>
+      </div>
+      <div class="flow">현상 확인 → 로그·설정 점검 → 문제 구간 분리 → 결과 검증 및 기록</div>
+    </div>
+  </section>
+
   <section id="projects">
     <div class="wrap">
       <h2>Projects</h2>
 
       <article class="card project">
-        <div class="project-head"><div><h3>01. Closer — Safe Dugout 웹·네트워크 보안 점검/개선</h3><p class="muted">약 1개월 반 · PM / 웹 보안 점검·네트워크 구성 · K-Digital Training 교육 프로젝트</p></div><span class="label">SECURITY / NETWORK</span></div>
+        <div class="project-head"><div><h3>01. AI Dev Team — AI 개발 자동화 환경 (진행 중)</h3><p class="muted">개인 프로젝트 · 인프라 환경 구성 및 운영 점검 · 워크플로 설계</p></div><span class="label">INFRASTRUCTURE / OPERATIONS</span></div>
+        <p><strong>목적:</strong> 대시보드에서 반복 개발 업무를 관리하고 AI 도구별로 구현·검토·QA 역할을 나누는 자동화 환경을 구성하는 프로젝트입니다.</p>
+        <p><strong>인프라 환경:</strong> Mac mini에서 Docker·Colima 기반의 서비스 실행환경을 구성하고 PostgreSQL·Redis 등의 실행 상태와 서비스 간 연동을 확인했습니다.</p>
+        <p><strong>점검 경험:</strong> 서비스 포트, 프로세스·컨테이너 상태, 실행 로그와 Health Check를 기준으로 실행 상태를 확인했습니다. SSH 기반 원격 접속 환경도 활용했습니다.</p>
+        <p><strong>본인 역할:</strong> 작업 흐름과 AI 모델별 역할을 기획하고 로컬 실행환경 구성·점검을 진행했습니다. 코드 구현에 AI 도구를 활용한 부분과 본인의 기획·검증 업무는 구분합니다.</p>
+        <p><strong>직무 연계:</strong> 상용 데이터센터가 아닌 개인 개발 환경이지만, 여러 서비스의 연결 상태를 확인하고 문제 발생 지점을 분리하는 습관을 익혔습니다.</p>
+        <div class="tags"><span class="tag">Docker</span><span class="tag">Colima</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">SSH</span><span class="tag">Health Check</span></div>
+      </article>
+
+      <article class="card project">
+        <div class="project-head"><div><h3>02. Closer — Safe Dugout 웹·네트워크 보안 점검/개선</h3><p class="muted">약 1개월 반 · PM / 웹 보안 점검·네트워크 구성 · K-Digital Training 교육 프로젝트</p></div><span class="label">SECURITY / NETWORK</span></div>
         <p><strong>목표:</strong> 국비지원 K-Digital Training ‘웹서버개발 및 웹보안 솔루션 구축 융합과정’에서 기존 Safe Dugout 서비스의 애플리케이션과 인프라 환경을 함께 점검했습니다.</p>
-        <p><strong>웹 보안:</strong> Burp Suite로 HTTP 요청을 분석하고 파라미터 변경에 따른 서버 처리 결과를 검증했습니다.</p>
+        <p><strong>웹 보안:</strong> Burp Suite로 HTTP 요청을 가로채 포인트 파라미터 값을 100에서 1000으로 변경하는 실습을 진행했습니다. 입력값을 신뢰할 때 발생할 수 있는 위험과 서버 측 유효성·권한 검증의 필요성을 학습했습니다.</p>
         <p><strong>네트워크 구성:</strong> Closer 프로젝트의 일환으로 Packet Tracer를 활용해 본사·지사 네트워크를 구성하고, VLAN, ACL, 이중화, 라우팅을 적용해 네트워크 영역을 분리하고 접근통제를 설정했습니다.</p>
-        <p><strong>장애 분석:</strong> 본사 서버와 지사 백업 간 통신 장애 상황에서 게이트웨이, 라우팅 테이블, ACL 및 역방향 경로를 순차적으로 확인하며 문제 구간을 좁혔습니다.</p>
+        <p><strong>장애 분석:</strong> 본사·지사 통신 장애에서 게이트웨이, 라우팅 테이블과 ACL 규칙을 확인했습니다. 차단 규칙으로 필요한 통신이 막힌 경우 허용 정책을 검토·수정해 통신을 복구하는 실습을 진행했습니다.</p>
         <div class="flow">Gateway → Routing Table → ACL → Reverse Routing</div>
         <p><strong>역할:</strong> PM으로 팀원별 진행 상황을 취합하고 작업 범위와 일정을 조율했습니다.</p>
         <p><strong>배운 점:</strong> 웹 요청 흐름과 네트워크 구조를 함께 확인하며 보안 문제를 분석하는 접근법을 익혔습니다.</p>
@@ -137,7 +168,7 @@
       </article>
 
       <article class="card project">
-        <div class="project-head"><div><h3>02. 함께걸음 — 배리어프리 정보·돌봄회원 매칭 웹 서비스</h3><p class="muted">약 1개월 반 · 부팀장 / 개발 · K-Digital Training</p></div><span class="label">WEB / TEAM</span></div>
+        <div class="project-head"><div><h3>03. 함께걸음 — 배리어프리 정보·돌봄회원 매칭 웹 서비스</h3><p class="muted">약 1개월 반 · 부팀장 / 개발 · K-Digital Training</p></div><span class="label">WEB / TEAM</span></div>
         <p><strong>서비스:</strong> 배리어프리 식당 정보, 지하철 엘리베이터 위치 정보, 돌봄회원 연결 기능을 제공하는 웹 서비스입니다.</p>
         <p><strong>담당:</strong> 로그인, 회원가입, 돌봄회원 마이페이지를 담당했고 프론트엔드와 백엔드 개발 전반에 참여했습니다.</p>
         <p><strong>협업:</strong> 담당 기능을 일정 내 완료한 뒤 전체 진행 상황을 확인하고 일정이 지연된 팀원의 개발 작업을 지원했습니다.</p>
@@ -147,7 +178,7 @@
       </article>
 
       <article class="card project">
-        <div class="project-head"><div><h3>03. Project Eden — AI 도구를 활용한 기능 기획·테스트 (진행 중)</h3><p class="muted">진행 중 · 개인 프로젝트 · 기능 기획 / 테스트 · Codex 활용</p></div><span class="label">PLANNING / TESTING</span></div>
+        <div class="project-head"><div><h3>04. Project Eden — AI 도구를 활용한 기능 기획·테스트 (진행 중)</h3><p class="muted">진행 중 · 개인 프로젝트 · 기능 기획 / 테스트 · Codex 활용</p></div><span class="label">PLANNING / TESTING</span></div>
         <p><strong>개요:</strong> 캐릭터와 월드 상호작용을 중심으로 한 웹 기반 게임 프로젝트로, 현재 진행 중입니다.</p>
         <p><strong>개발 방식:</strong> 코드 작성과 구현에는 Codex를 주로 활용했습니다.</p>
         <p><strong>본인 역할:</strong> 기능 기획과 현재까지 구현된 기능의 테스트를 담당하고 있습니다.</p>
@@ -158,7 +189,7 @@
       </article>
 
       <article class="card project">
-        <div class="project-head"><div><h3>04. ARB//KOREA — 거래소 가격 비교·자동화 시스템</h3><p class="muted">개인 프로젝트 · Spring Boot</p></div><span class="label">BACKEND / OPERATIONS</span></div>
+        <div class="project-head"><div><h3>05. ARB//KOREA — 거래소 가격 비교·자동화 시스템</h3><p class="muted">개인 프로젝트 · Spring Boot</p></div><span class="label">BACKEND / OPERATIONS</span></div>
         <p><strong>개요:</strong> 업비트와 빗썸의 KRW 마켓을 비교하고 호가 잔량, 슬리피지, 수수료를 반영해 차익 기회를 계산하는 개인용 애플리케이션입니다.</p>
         <p><strong>Backend:</strong> 시장 스캔, 거래소 연결, 잔고 조회, 주문기록 관리와 사용자별 자동거래 설정 기능을 구성했습니다.</p>
         <p><strong>안전장치:</strong> 실제 주문 기능을 다중 환경변수와 사용자 스위치로 제한하고, 로그인 실패 잠금, 세션 만료, 비상정지, 주문 장애 알림 등을 적용했습니다.</p>
